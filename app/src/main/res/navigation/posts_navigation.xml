@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/posts_navigation"
+    app:startDestination="@id/postListFragment">
+
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="cl.uandes.myblogapp.ui.view.blog.posts.PostListFragment"
+        android:label="PostListFragment" >
+        <action
+            android:id="@+id/action_postListFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+        <action
+            android:id="@+id/action_postListFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="cl.uandes.myblogapp.ui.view.blog.posts.PostDetailFragment"
+        android:label="PostDetailFragment">
+        <argument app:argType="string"
+            android:name="postId"
+            android:defaultValue="1"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="cl.uandes.myblogapp.ui.view.blog.posts.CreatePostFragment"
+        android:label="CreatePostFragment" >
+        <action
+            android:id="@+id/action_createPostFragment_to_postListFragment"
+            app:destination="@id/postListFragment" />
+    </fragment>
+</navigation>
